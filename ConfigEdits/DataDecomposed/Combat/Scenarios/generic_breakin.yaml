@@ -1,0 +1,5 @@
+removed: false
+edits:
+- 'steps.cleanup.outcome: !d'
+- 'steps.cleanup.outcome.type: Victory'
+- 'steps.wave0.transitionMode: OnStateChange'
