@@ -1,4 +1,7 @@
-﻿using HarmonyLib;
+﻿// Copyright (c) 2023 EchKode
+// SPDX-License-Identifier: BSD-3-Clause
+
+using HarmonyLib;
 
 using PBModManager = PhantomBrigade.Mods.ModManager;
 
@@ -44,7 +47,6 @@ namespace EchKode.PBMods.ScenarioStateChange
 		[HarmonyPrefix]
 		static void Hb_StartPrefix()
 		{
-			ModManager.LoadText();
 			Heartbeat.Start();
 		}
 	}
