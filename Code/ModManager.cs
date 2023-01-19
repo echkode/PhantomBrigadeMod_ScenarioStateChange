@@ -662,7 +662,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 				{
 					Report(
 						spec,
-						"attempts to edits",
+						"attempts to edit",
 						$"Integer field can't be overwritten - can't parse raw value {spec.valueRaw}");
 					return;
 				}
@@ -684,7 +684,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 				{
 					Report(
 						spec,
-						"attempts to edits",
+						"attempts to edit",
 						$"Float field can't be overwritten - can't parse raw value {spec.valueRaw}");
 					return;
 				}
@@ -761,7 +761,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 			{
 				Report(
 					spec,
-					"attempts to edits",
+					"attempts to edit",
 					$"Vector{vectorLength} field can't be overwritten - can't parse raw value {spec.valueRaw} - missing parentheses");
 				return (false, null);
 			}
@@ -772,7 +772,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 			{
 				Report(
 					spec,
-					"attempts to edits",
+					"attempts to edit",
 					$"Vector{vectorLength} field can't be overwritten - can't parse raw value {spec.valueRaw} - invalid number of elements");
 				return (false, null);
 			}
@@ -784,7 +784,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 				{
 					Report(
 						spec,
-						"attempts to edits",
+						"attempts to edit",
 						$"Vector{vectorLength} field can't be overwritten - can't parse raw value {spec.valueRaw}");
 					return (false, null);
 				}
@@ -878,8 +878,8 @@ namespace EchKode.PBMods.ScenarioStateChange
 				{
 					Report(
 						spec,
-						"attempts to edits",
-						$"Enum field can't be overwritten - can't parse raw value {spec.valueRaw}");
+						"attempts to edit",
+						$"Enum field can't be overwritten - can't parse raw value | type: {targetType.Name} | value: {spec.valueRaw}");
 					return;
 				}
 				v = values.GetValue(idx);
