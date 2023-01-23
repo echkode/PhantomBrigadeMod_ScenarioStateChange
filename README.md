@@ -1,5 +1,7 @@
 # ScenarioStateChange
 
+**UPDATE (2023-01-23):** this mod is not compatible with patch 0.23.1-b5426 released on 2023-01-19. Changes have been made to scenarios that alter how they work and I haven't finished my analysis of those changes.
+
 A library mod for [Phantom Brigade (Alpha)](https://braceyourselfgames.com/phantom-brigade/) which demonstrates a fix for a bug in scenario processing. Specifically, in the combat scenario used for the Hidden Workshop Cache site in the second province, Ostbager-Wiel. Have you ever noticed that after you destroy all the guard units and wait around for 3 turns in the circle for the cache entrance, you have to wait around for another 2 rounds doing nothing before the scenario will end with victory? Well, I figured out what's going on and this mod patches the problem.
 
 It is compatible with game patch **0.23.0-b5245**. That is an **EXPERIMENTAL** release. All library mods are fragile and susceptible to breakage whenever a new version is released.
