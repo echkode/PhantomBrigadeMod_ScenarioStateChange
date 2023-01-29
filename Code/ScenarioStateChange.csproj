@@ -34,8 +34,9 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\Program Files\Epic Games\PhantomAlpha\PhantomBrigade_Data\Managed\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\Program Files\Epic Games\PhantomAlpha\PhantomBrigade_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Epic Games\PhantomAlpha\PhantomBrigade_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Entitas">
       <HintPath>..\..\..\..\Program Files\Epic Games\PhantomAlpha\PhantomBrigade_Data\Managed\Entitas.dll</HintPath>

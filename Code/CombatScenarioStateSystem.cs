@@ -13,6 +13,7 @@ using PhantomBrigade.Data;
 using PBCombatScenarioStateSystem = PhantomBrigade.Combat.Systems.CombatScenarioStateSystem;
 
 using UnityEngine;
+using System.Runtime.Remoting.Contexts;
 
 namespace EchKode.PBMods.ScenarioStateChange
 {
@@ -52,7 +53,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 
 		protected override void Execute(List<CombatEntity> entities)
 		{
-			var context = combat.scenarioStateRefresh.context;
+			var contexts = (ScenarioStateRefreshContext)combat.scenarioStateRefresh.contexts;
 			combat.RemoveScenarioStateRefresh();
 			if (!IDUtility.IsGameState("combat"))
 			{
@@ -101,9 +102,8 @@ namespace EchKode.PBMods.ScenarioStateChange
 					continue;
 				}
 
-				var inContext = blockScenarioState.evaluationFilter == null
-					|| blockScenarioState.evaluationFilter.Count == 0
-					|| blockScenarioState.evaluationFilter.Contains(context);
+				var inContext = blockScenarioState.evaluationContext == ScenarioStateRefreshContext.None
+					|| (blockScenarioState.evaluationContext & contexts) != ScenarioStateRefreshContext.None;
 				if (!inContext)
 				{
 					continue;
@@ -155,7 +155,7 @@ namespace EchKode.PBMods.ScenarioStateChange
 					combat.isScenarioTransitionRefresh = true;
 				}
 			}
-			CIControllerCombat.RefreshSelectedUnitActions();
+			CIViewCombatAction.ins.RefreshSelectedUnitActions();
 			if (stateValueChanged || removedScopes || stateTriggered)
 			{
 				CIViewCombatScenarioStatus.ins.Refresh(false);
